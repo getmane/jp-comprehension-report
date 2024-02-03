@@ -23,7 +23,7 @@ class SettingsController {
         return "settings";
     }
 
-    @PostMapping("settings/upload-jpdb") public String uploadImage(
+    @PostMapping("settings/upload-jpdb") public String uploadJpdb(
             Model model,
             @RequestParam("jpdb-file") MultipartFile file
     ) throws IOException {

@@ -4,17 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Jp</title>
+    <title>Jp comprehension report</title>
 
 </head>
 
 <body>
-
 <main role="main" class="container">
-
-    <div class="starter-template">
-        <h1></h1>
-    </div>
     <table style="border: 2px solid black">
         <tbody style="border: 2px solid black">
 
@@ -31,11 +26,13 @@
             <td th:text="${knownPercentage}"></td>
         </tr>
         <tr th:each="i : ${#numbers.sequence(0, #lists.size(pageWords))}" style="border: 2px solid black">
-            <td th:if="${#lists.size(pageWords)} > ${i} and ${#lists.size(pageWords)} != 0" th:text="${pageWords[i]}"></td>
-            <td th:if="${#lists.size(unknownWords)} > ${i} and ${#lists.size(unknownWords)} != 0" th:text="${unknownWords[i]}"></td>
-            <td th:if="${#lists.size(knownWords)} > ${i} and ${#lists.size(knownWords)} != 0" th:text="${knownWords[i]}"></td>
+            <td th:if="${#lists.size(pageWords)} > ${i} and ${#lists.size(pageWords)} != 0"
+                th:text="${pageWords[i]}"></td>
+            <td th:if="${#lists.size(unknownWords)} > ${i} and ${#lists.size(unknownWords)} != 0"
+                th:text="${unknownWords[i]}"></td>
+            <td th:if="${#lists.size(knownWords)} > ${i} and ${#lists.size(knownWords)} != 0"
+                th:text="${knownWords[i]}"></td>
         </tr>
-
         </tbody>
     </table>
 </main>
