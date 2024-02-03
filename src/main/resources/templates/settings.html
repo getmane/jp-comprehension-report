@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Jp</title>
+
+    <link rel="stylesheet" th:href="@{webjars/bootstrap/4.2.1/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+
+</head>
+
+<body>
+<section class="my-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <h2>Upload Jpdb Export File</h2>
+                <form method="post" th:action="@{settings/upload-jpdb}" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <input type="file" name="jpdb-file" class="form-control-file">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Upload jpdb export file (.json)</button>
+                </form>
+                <span th:if="${uploadedMessage != null}" th:text="${uploadedMessage}"></span>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
