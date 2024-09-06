@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
 public class ClipboardEventListener implements ApplicationListener<ClipboardEvent> {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ClipboardEventListener.class);
+    private static final UrlValidator URL_VALIDATOR = new UrlValidator();
 
     private final WebParseService webParseService;
 
@@ -21,8 +22,7 @@ public class ClipboardEventListener implements ApplicationListener<ClipboardEven
     @Override
     public void onApplicationEvent(ClipboardEvent event) {
         LOGGER.info("Received clipboard change: " + event.getClipboardContent());
-        UrlValidator validator = new UrlValidator();
-        if (validator.isValid(event.getClipboardContent())) {
+        if (URL_VALIDATOR.isValid(event.getClipboardContent())) {
             webParseService.parseAndSave(event.getClipboardContent());
         }
     }
